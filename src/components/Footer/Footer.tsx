@@ -14,7 +14,7 @@ export default function Footer() {
             data-tooltip-target="tooltip-github"
             target="_blank"
             rel="noreferrer"
-            className="flex cursor-pointer items-center justify-center rounded-lg p-2 text-darkblue-300 transition hover:bg-hovercolor hover:text-darkblue-500"
+            className="flex cursor-pointer items-center justify-center rounded-lg p-2 text-darkblue-300 transition hover:text-darkblue-500"
           >
             <GitHubLogo className="h-6 w-6 sm:h-8 sm:w-8" />
           </a>
@@ -22,7 +22,7 @@ export default function Footer() {
             href="https://www.linkedin.com/in/konrad-debski/"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex cursor-pointer items-center justify-center rounded-lg p-2 text-darkblue-300 transition hover:bg-hovercolor hover:text-darkblue-500"
+            className="inline-flex cursor-pointer items-center justify-center rounded-lg p-2 text-darkblue-300 transition hover:text-darkblue-500"
           >
             <LinkedInLogo className="h-6 w-6 sm:h-8 sm:w-8" />
           </a>

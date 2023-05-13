@@ -16,9 +16,6 @@ export default {
           800: "#15171f",
           900: "#0b0b0f",
         },
-        hovercolor: "#E9E9E9",
-        disabledcolor: "#F5F6F8",
-        pagebackground: "#F9F9F9",
       },
       minHeight: {
         screen: "100svh",
