@@ -4,10 +4,14 @@ import { CategoriesAPI, DataAPI } from "../../types/types.ts"
 import Button from "./Button/Button.tsx"
 import Image from "./Image/Image.tsx"
 import QuoteBlock from "./Quote/Quote.tsx"
+import Select from "./Select/Select.tsx"
 
 export default function Card() {
   const [result, setResult] = useState<DataAPI>()
-  const [categories, setCategories] = useState<CategoriesAPI>()
+  const [categories, setCategories] = useState<CategoriesAPI>([])
+  const [selectedCategory, setSelectedCategory] = useState<
+    CategoriesAPI[0] | undefined
+  >()
 
   const handleGetQuoteCallback = useCallback(() => {
     handleGetQuote()
@@ -34,6 +38,11 @@ export default function Card() {
     <div className="w-xl max-w-xl rounded-lg bg-white px-16 py-14 shadow-lg">
       <Image />
       <QuoteBlock quote={result?.value} />
+      <Select
+        options={categories}
+        value={selectedCategory}
+        onChange={(option) => setSelectedCategory(option)}
+      />
       <Button
         text="Draw a random Chuck Norris Joke"
         onClickFn={handleGetQuoteCallback}

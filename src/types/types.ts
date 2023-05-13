@@ -17,4 +17,9 @@ export type ButtonProps = {
   text: string
   onClick: (event: React.MouseEvent) => void
 }
+
+export type SelectProps = {
+  options: CategoriesAPI
+  value?: string
+  onChange: (value?: string) => void
 }
