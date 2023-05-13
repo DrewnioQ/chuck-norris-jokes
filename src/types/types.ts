@@ -10,7 +10,7 @@ export type DataAPI = {
 export type CategoriesAPI = string[]
 
 export type QuoteProps = {
-  quote: string | undefined
+  quote?: string
 }
 
 export type ButtonProps = {
