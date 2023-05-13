@@ -12,3 +12,8 @@ export type CategoriesAPI = string[]
 export type QuoteProps = {
   quote: string | undefined
 }
+
+export type ButtonProps = {
+  text: string
+  onClickFn: () => void
+}
