@@ -5,7 +5,7 @@ export default function Image() {
     <img
       src={ChuckNorrisImg}
       alt="Chuck Norris"
-      className="h-40 w-full rounded-sm object-cover object-left-top"
+      className="h-40 w-full rounded-md object-cover object-left-top"
     />
   )
 }
