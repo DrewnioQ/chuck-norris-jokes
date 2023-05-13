@@ -15,5 +15,6 @@ export type QuoteProps = {
 
 export type ButtonProps = {
   text: string
-  onClickFn: () => void
+  onClick: (event: React.MouseEvent) => void
+}
 }
