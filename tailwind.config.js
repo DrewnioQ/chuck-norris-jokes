@@ -4,6 +4,22 @@ export default {
   content: ["./*.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      colors: {
+        darkblue: {
+          100: "#d7d7db",
+          200: "#aeb0b8",
+          300: "#868894",
+          400: "#5d6171",
+          500: "#35394d",
+          600: "#2a2e3e",
+          700: "#20222e",
+          800: "#15171f",
+          900: "#0b0b0f",
+        },
+        hovercolor: "#E9E9E9",
+        disabledcolor: "#F5F6F8",
+        pagebackground: "#F9F9F9",
+      },
       minHeight: {
         screen: "100svh",
       },
