@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import getData, { getCategories } from "../../lib/ChuckNorrisAPI.ts"
 import { CategoriesAPI, DataAPI } from "../../types/types.ts"
 import Image from "./Image/Image.tsx"
+import QuoteBlock from "./Quote/Quote.tsx"
 
 export default function Card() {
   const [result, setResult] = useState<DataAPI>()
@@ -27,6 +28,7 @@ export default function Card() {
   return (
     <div className="max-w-xl rounded-lg bg-white px-16 py-14 shadow-lg">
       <Image />
+      <QuoteBlock quote={result?.value} />
       <button type="button" onClick={handleGetQuote}>
         Get Quote
       </button>
