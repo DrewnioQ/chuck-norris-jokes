@@ -25,13 +25,18 @@ export default function Card() {
     setCategories(data)
   }
 
+  function handleButtonGetQuote(event: React.MouseEvent) {
+    event.preventDefault()
+    handleGetQuote(selectedCategory)
+  }
+
   useEffect(() => {
     handleGetCategories()
     handleGetQuote()
   }, [])
 
   return (
-    <div className="w-xl max-w-xl rounded-lg bg-white px-16 py-14 shadow-lg">
+    <div className="max-w-2xl rounded-lg bg-white px-16 py-14 shadow-lg md:w-[42rem]">
       <Image />
       <QuoteBlock quote={result?.value} />
       <Select
@@ -41,7 +46,7 @@ export default function Card() {
       />
       <Button
         text="Draw a random Chuck Norris Joke"
-        onClickFn={handleGetQuoteCallback}
+        onClick={(e) => handleButtonGetQuote(e)}
       />
     </div>
   )
