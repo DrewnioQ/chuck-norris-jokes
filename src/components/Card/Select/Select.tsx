@@ -141,8 +141,8 @@ export default function Select({ options, value, onChange }: SelectProps) {
           {options.map((option, idx) => (
             <li
               key={idx}
-              className={`mx-2 cursor-pointer rounded-md px-2 py-4 transition hover:bg-neutral-200 hover:font-bold hover:text-darkblue-500 ${
-                idx === highlightedIndex ? "bg-neutral-200 font-bold" : ""
+              className={`mx-2 cursor-pointer rounded-md px-2 py-4 transition hover:bg-neutral-200 hover:font-medium hover:text-darkblue-500 ${
+                idx === highlightedIndex ? "bg-neutral-200 font-medium" : ""
               }`}
               onMouseEnter={() => setHighlightedIndex(idx)}
               onKeyDown={(e) => handleSelection(e, option)}

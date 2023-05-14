@@ -1,7 +1,7 @@
 {
-  "name": "chuck-norris-quotes",
+  "name": "chuck-norris-jokes",
   "version": "1.0.0",
-  "description": "Website with random Chuck Norris quotes",
+  "description": "Website with random Chuck Norris jokes",
   "main": "index.html",
   "type": "module",
   "author": "Konrad Dębski",
@@ -43,6 +43,7 @@
     "tailwindcss": "^3.3.2",
     "typescript": "^5.0.4",
     "vite": "^4.3.2",
+    "vite-plugin-webfont-dl": "^3.7.4",
     "vitest": "^0.31.0"
   }
 }

@@ -1,2 +1,3 @@
-# chuck-norris-quotes
-Website with random Chuck Norris quotes
+# chuck-norris-jokes
+
+Website with random Chuck Norris jokes
