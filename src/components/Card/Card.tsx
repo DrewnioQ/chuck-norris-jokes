@@ -42,11 +42,11 @@ export default function Card() {
     if (impersonatedPerson === "Chuck Norris") {
       setImgSrc(ChuckNorrisImg)
       setImgAlt("Chuck Norris")
-      setImgClassName("w-full object-cover h-40 rounded-md")
+      setImgClassName("w-full object-cover")
     } else {
       setImgSrc(UnknownPerson)
       setImgAlt("Unknown Person")
-      setImgClassName("mx-auto h-40")
+      setImgClassName("mx-auto")
     }
   }
 
