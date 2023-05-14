@@ -83,7 +83,7 @@ export default function Card() {
         text={`Draw a random ${impersonatedPerson} joke`}
         disabled={false}
         onClick={(e) => handleButtonGetJoke(e)}
-        className="w-full"
+        className="my-4 w-full"
       />
       <DownloadSection
         category={selectedCategory}
