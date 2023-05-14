@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import ChuckNorrisImg from "../../assets/img/chuck-norris.jpg"
 import UnknownPerson from "../../assets/img/question-mark-person.png"
 import getData, { getCategories } from "../../lib/ChuckNorrisAPI.ts"
+import processJoke from "../../lib/processJoke.ts"
 import { CategoriesAPI } from "../../types/types.ts"
 import Button from "./Button/Button.tsx"
 import Image from "./Image/Image.tsx"
@@ -27,7 +28,7 @@ export default function Card() {
   const handleGetJoke = async (category?: string) => {
     const data = await getData(category)
     if (!data) return
-    setJoke(processJoke(data.value))
+    setJoke(processJoke(data.value, impersonatedPerson))
   }
 
   const handleGetCategories = async () => {
