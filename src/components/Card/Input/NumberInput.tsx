@@ -12,7 +12,7 @@ export default function NumberInput({
   const valueAsNumber = Number(value)
   const [invalid, setInvalid] = useState<boolean>(false)
 
-  const bgColor = invalid ? "bg-red-200" : "bg-neutral-100"
+  const bgColor = invalid ? "bg-red-300" : "bg-neutral-100"
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     setValue(event.currentTarget.value)
