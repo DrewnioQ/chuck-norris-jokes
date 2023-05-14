@@ -1,9 +1,22 @@
 /** @type {import('tailwindcss').Config} */
 
 export default {
-  content: ["./*.html", "./src/**/*.{html,js,ts,jsx,tsx}"],
+  content: ["./*.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      colors: {
+        darkblue: {
+          100: "#d7d7db",
+          200: "#aeb0b8",
+          300: "#868894",
+          400: "#5d6171",
+          500: "#35394d",
+          600: "#2a2e3e",
+          700: "#20222e",
+          800: "#15171f",
+          900: "#0b0b0f",
+        },
+      },
       minHeight: {
         screen: "100svh",
       },
