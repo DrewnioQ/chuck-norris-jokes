@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
@@ -140,7 +141,7 @@ export default function Select({ options, value, onChange }: SelectProps) {
           {options.map((option, idx) => (
             <li
               key={idx}
-              className={`mx-2 cursor-pointer rounded-md px-2 py-4 hover:bg-neutral-200 hover:font-bold hover:text-darkblue-500 ${
+              className={`mx-2 cursor-pointer rounded-md px-2 py-4 transition hover:bg-neutral-200 hover:font-bold hover:text-darkblue-500 ${
                 idx === highlightedIndex ? "bg-neutral-200 font-bold" : ""
               }`}
               onMouseEnter={() => setHighlightedIndex(idx)}
