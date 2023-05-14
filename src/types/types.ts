@@ -9,6 +9,12 @@ export type DataAPI = {
 
 export type CategoriesAPI = string[]
 
+export type ImageProps = {
+  src: string
+  alt: string
+  className: string
+}
+
 export type QuoteProps = {
   quote?: string
 }

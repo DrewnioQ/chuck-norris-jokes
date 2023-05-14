@@ -1,11 +1,11 @@
-import ChuckNorrisImg from "../../../assets/img/chuck-norris.jpg"
+import { ImageProps } from "../../../types/types.ts"
 
-export default function Image() {
+export default function Image({ src, alt, className }: ImageProps) {
   return (
     <img
-      src={ChuckNorrisImg}
-      alt="Chuck Norris"
-      className="h-40 w-full rounded-md object-cover object-left-top"
+      src={src}
+      alt={alt}
+      className={`h-36 rounded-md object-top ${className}`}
     />
   )
 }
