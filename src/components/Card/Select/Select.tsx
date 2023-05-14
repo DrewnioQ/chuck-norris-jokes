@@ -8,7 +8,7 @@ import {
   ChevronUpIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline"
-import { KeyboardEvent, useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { SelectProps } from "../../../types/types.ts"
 
 function capitalizeFirstLetter(string?: string) {
@@ -57,6 +57,7 @@ export default function Select({ options, value, onChange }: SelectProps) {
     if (isOpen) setHighlightedIndex(0)
   }, [isOpen])
 
+  // This hook is supposed to give keyboard functionality to Select component, but at the moment it only allows focus and highlight with arrow keys
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.target !== containerRef.current) return
@@ -97,11 +98,10 @@ export default function Select({ options, value, onChange }: SelectProps) {
   return (
     <div
       ref={containerRef}
-      className={`select relative my-4 flex items-center gap-2 rounded-md border-2 p-2 text-neutral-600 outline-none focus-visible:outline-darkblue-500 ${activeSelect}
+      className={`relative my-4 flex items-center gap-2 rounded-md border-2 p-2 text-neutral-600 outline-none focus-visible:outline-darkblue-500 ${activeSelect}
       ${catSelSelect}`}
       tabIndex={0}
       onClick={() => setIsOpen((prev) => !prev)}
-      // onBlur={() => setIsOpen(false)}
     >
       <span
         className={`mx-2 flex-grow ${
