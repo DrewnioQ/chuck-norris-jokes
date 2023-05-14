@@ -35,3 +35,10 @@ export type SelectProps = {
 export type TextInputProps = {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
+
+export type NumberInputProps = {
+  min: number
+  max: number
+  onChange: (value: number) => void
+  onInvalid: (invalid: boolean) => void
+}
