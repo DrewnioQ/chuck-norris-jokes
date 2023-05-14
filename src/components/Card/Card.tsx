@@ -85,7 +85,10 @@ export default function Card() {
       <TextInput onChange={(e) => handleTextInput(e)} />
       <Button
         text={`Draw a random ${impersonatedPerson} joke`}
+        disabled={false}
         onClick={(e) => handleButtonGetJoke(e)}
+        className="w-full"
+      />
       />
     </div>
   )

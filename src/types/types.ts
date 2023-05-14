@@ -21,6 +21,8 @@ export type JokeProps = {
 
 export type ButtonProps = {
   text: string
+  disabled: boolean
+  className: string
   onClick: (event: React.MouseEvent) => void
 }
 
