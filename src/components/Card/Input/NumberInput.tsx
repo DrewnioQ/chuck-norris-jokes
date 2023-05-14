@@ -56,7 +56,7 @@ export default function NumberInput({
         placeholder="0"
         id="numberInput"
         onChange={(e) => handleChange(e)}
-        className="w-[3ch] bg-transparent text-center outline-none [appearance:textfield] placeholder:text-darkblue-500 invalid:bg-red-200 [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
+        className="w-[3ch] bg-transparent text-center outline-none [appearance:textfield] placeholder:text-darkblue-500 [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
       />
       <button
         type="button"
