@@ -33,5 +33,6 @@ module.exports = {
     "@typescript-eslint/no-use-before-define": ["error", { functions: false }],
     "import/extensions": ["error", "ignorePackages", { "": "never" }],
     "react/react-in-jsx-scope": "off",
+    "no-plusplus": ["error", { allowForLoopAfterthoughts: true }],
   },
 }
