@@ -1,19 +1,23 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react"
 import ChuckNorrisImg from "../../assets/img/chuck-norris.jpg"
 import UnknownPerson from "../../assets/img/question-mark-person.png"
 import getData, { getCategories } from "../../lib/ChuckNorrisAPI.ts"
-import { CategoriesAPI, DataAPI } from "../../types/types.ts"
+import { CategoriesAPI } from "../../types/types.ts"
 import Button from "./Button/Button.tsx"
 import Image from "./Image/Image.tsx"
+import TextInput from "./Input/TextInput.tsx"
 import QuoteBlock from "./Quote/Quote.tsx"
 import Select from "./Select/Select.tsx"
 
 export default function Card() {
-  const [result, setResult] = useState<DataAPI>()
+  const [quote, setQuote] = useState<string>()
   const [categories, setCategories] = useState<CategoriesAPI>([])
   const [selectedCategory, setSelectedCategory] = useState<
     CategoriesAPI[0] | undefined
   >()
+  const [impersonatedPerson, setImpersonatedPerson] =
+    useState<string>("Chuck Norris")
   const [imgSrc, setImgSrc] = useState<string>(ChuckNorrisImg)
   const [imgAlt, setImgAlt] = useState<string>("Chuck Norris")
   const [imgClassName, setImgClassName] = useState<string>(
@@ -23,7 +27,7 @@ export default function Card() {
   const handleGetQuote = async (category?: string) => {
     const data = await getData(category)
     if (!data) return
-    setResult(data)
+    setQuote(processQuote(data.value))
   }
 
   const handleGetCategories = async () => {
@@ -49,12 +53,26 @@ export default function Card() {
     handleGetQuote(selectedCategory)
     handleImage()
   }
+
+  function handleTextInput(event: React.ChangeEvent<HTMLInputElement>) {
+    setImpersonatedPerson(event.currentTarget.value)
+  }
+
+  function processQuote(quoteString?: string) {
+    if (!quoteString || impersonatedPerson === "Chuck Norris")
+      return quoteString
+
+    return quoteString.replace("Chuck Norris", impersonatedPerson)
   }
 
   useEffect(() => {
     handleGetCategories()
     handleGetQuote()
   }, [])
+
+  useEffect(() => {
+    if (impersonatedPerson === "") setImpersonatedPerson("Chuck Norris")
+  }, [impersonatedPerson])
 
   return (
     <div className="max-w-xl rounded-lg bg-white px-16 py-14 shadow-lg md:w-[42rem]">
@@ -65,8 +83,9 @@ export default function Card() {
         value={selectedCategory}
         onChange={(option) => setSelectedCategory(option)}
       />
+      <TextInput onChange={(e) => handleTextInput(e)} />
       <Button
-        text="Draw a random Chuck Norris Joke"
+        text={`Draw a random ${impersonatedPerson} Joke`}
         onClick={(e) => handleButtonGetQuote(e)}
       />
     </div>
