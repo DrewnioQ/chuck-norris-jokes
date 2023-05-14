@@ -7,11 +7,11 @@ import { CategoriesAPI } from "../../types/types.ts"
 import Button from "./Button/Button.tsx"
 import Image from "./Image/Image.tsx"
 import TextInput from "./Input/TextInput.tsx"
-import QuoteBlock from "./Quote/Quote.tsx"
+import Joke from "./Joke/Joke.tsx"
 import Select from "./Select/Select.tsx"
 
 export default function Card() {
-  const [quote, setQuote] = useState<string>()
+  const [joke, setJoke] = useState<string>()
   const [categories, setCategories] = useState<CategoriesAPI>([])
   const [selectedCategory, setSelectedCategory] = useState<
     CategoriesAPI[0] | undefined
@@ -24,10 +24,10 @@ export default function Card() {
     "w-full object-cover"
   )
 
-  const handleGetQuote = async (category?: string) => {
+  const handleGetJoke = async (category?: string) => {
     const data = await getData(category)
     if (!data) return
-    setQuote(processQuote(data.value))
+    setJoke(processJoke(data.value))
   }
 
   const handleGetCategories = async () => {
@@ -48,9 +48,9 @@ export default function Card() {
     }
   }
 
-  function handleButtonGetQuote(event: React.MouseEvent) {
+  function handleButtonGetJoke(event: React.MouseEvent) {
     event.preventDefault()
-    handleGetQuote(selectedCategory)
+    handleGetJoke(selectedCategory)
     handleImage()
   }
 
@@ -58,16 +58,15 @@ export default function Card() {
     setImpersonatedPerson(event.currentTarget.value)
   }
 
-  function processQuote(quoteString?: string) {
-    if (!quoteString || impersonatedPerson === "Chuck Norris")
-      return quoteString
+  function processJoke(jokeString?: string) {
+    if (!jokeString || impersonatedPerson === "Chuck Norris") return jokeString
 
-    return quoteString.replace("Chuck Norris", impersonatedPerson)
+    return jokeString.replace("Chuck Norris", impersonatedPerson)
   }
 
   useEffect(() => {
     handleGetCategories()
-    handleGetQuote()
+    handleGetJoke()
   }, [])
 
   useEffect(() => {
@@ -77,7 +76,7 @@ export default function Card() {
   return (
     <div className="flex w-full flex-grow flex-col justify-center rounded-lg bg-white px-10 py-10 shadow-lg sm:max-w-xl sm:flex-grow-0 sm:px-16 sm:py-14 md:w-[42rem]">
       <Image src={imgSrc} alt={imgAlt} className={imgClassName} />
-      <QuoteBlock quote={quote} />
+      <Joke joke={joke} />
       <Select
         options={categories}
         value={selectedCategory}
@@ -86,7 +85,7 @@ export default function Card() {
       <TextInput onChange={(e) => handleTextInput(e)} />
       <Button
         text={`Draw a random ${impersonatedPerson} Joke`}
-        onClick={(e) => handleButtonGetQuote(e)}
+        onClick={(e) => handleButtonGetJoke(e)}
       />
     </div>
   )

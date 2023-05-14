@@ -15,8 +15,8 @@ export type ImageProps = {
   className: string
 }
 
-export type QuoteProps = {
-  quote?: string
+export type JokeProps = {
+  joke?: string
 }
 
 export type ButtonProps = {

@@ -1,7 +1,7 @@
 {
-  "name": "chuck-norris-quotes",
+  "name": "chuck-norris-jokes",
   "version": "1.0.0",
-  "description": "Website with random Chuck Norris quotes",
+  "description": "Website with random Chuck Norris jokes",
   "main": "index.html",
   "type": "module",
   "author": "Konrad Dębski",

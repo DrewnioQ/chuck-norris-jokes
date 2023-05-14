@@ -1,8 +1,8 @@
 import { CategoriesAPI, DataAPI } from "../types/types.ts"
 
-export default async function getData(quoteCategory?: string) {
-  const API_URL = quoteCategory
-    ? `https://api.chucknorris.io/jokes/random?category=${quoteCategory}`
+export default async function getData(jokeCategory?: string) {
+  const API_URL = jokeCategory
+    ? `https://api.chucknorris.io/jokes/random?category=${jokeCategory}`
     : "https://api.chucknorris.io/jokes/random"
 
   try {
