@@ -75,7 +75,7 @@ export default function Card() {
   }, [impersonatedPerson])
 
   return (
-    <div className="max-w-xl rounded-lg bg-white px-16 py-14 shadow-lg md:w-[42rem]">
+    <div className="flex w-full flex-grow flex-col justify-center rounded-lg bg-white px-10 py-10 shadow-lg sm:max-w-xl sm:flex-grow-0 sm:px-16 sm:py-14 md:w-[42rem]">
       <Image src={imgSrc} alt={imgAlt} className={imgClassName} />
       <QuoteBlock quote={quote} />
       <Select
