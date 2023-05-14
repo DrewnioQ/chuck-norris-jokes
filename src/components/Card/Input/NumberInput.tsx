@@ -1,11 +1,4 @@
-import {
-  MinusCircleIcon as MinusCircleIconOutline,
-  PlusCircleIcon as PlusCircleIconOutline,
-} from "@heroicons/react/24/outline"
-import {
-  MinusCircleIcon as MinusCircleIconSolid,
-  PlusCircleIcon as PlusCircleIconSolid,
-} from "@heroicons/react/24/solid"
+import { MinusCircleIcon, PlusCircleIcon } from "@heroicons/react/24/outline"
 import { useEffect, useState } from "react"
 import { NumberInputProps } from "../../../types/types.ts"
 
@@ -52,7 +45,7 @@ export default function NumberInput({
         className="px-2 py-1"
         onClick={() => handleDecrement()}
       >
-        <MinusCircleIconOutline className="h-8 w-8 stroke-1" />
+        <MinusCircleIcon className="h-8 w-8 stroke-1" />
       </button>
       <input
         min={min}
@@ -70,7 +63,7 @@ export default function NumberInput({
         onClick={() => handleIncrement()}
         className="px-2 py-1"
       >
-        <PlusCircleIconOutline className="h-8 w-8 stroke-1" />
+        <PlusCircleIcon className="h-8 w-8 stroke-1" />
       </button>
     </div>
   )
