@@ -70,7 +70,7 @@ export default function Card() {
   }, [impersonatedPerson])
 
   return (
-    <div className="flex w-full flex-grow flex-col justify-center rounded-lg bg-white px-10 py-10 shadow-lg sm:block sm:max-w-xl sm:flex-grow-0 sm:px-16 sm:pb-8 sm:pt-14 md:w-[42rem]">
+    <div className="flex w-full flex-grow flex-col justify-center bg-white px-10 py-10 shadow-lg sm:block sm:max-w-xl sm:flex-grow-0 sm:rounded-2xl sm:px-16 sm:pb-8 sm:pt-14 md:w-[42rem]">
       <Image src={imgSrc} alt={imgAlt} className={imgClassName} />
       <Joke joke={joke} />
       <Select
