@@ -42,3 +42,8 @@ export type NumberInputProps = {
   onChange: (value: number) => void
   onInvalid: (invalid: boolean) => void
 }
+
+export type DownloadSectionProps = {
+  category: CategoriesAPI[0] | undefined
+  impersonatedPerson: string
+}

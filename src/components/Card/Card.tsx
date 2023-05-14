@@ -6,6 +6,7 @@ import getData, { getCategories } from "../../lib/ChuckNorrisAPI.ts"
 import processJoke from "../../lib/processJoke.ts"
 import { CategoriesAPI } from "../../types/types.ts"
 import Button from "./Button/Button.tsx"
+import DownloadSection from "./DownloadSection/DownloadSection.tsx"
 import Image from "./Image/Image.tsx"
 import TextInput from "./Input/TextInput.tsx"
 import Joke from "./Joke/Joke.tsx"
@@ -59,12 +60,6 @@ export default function Card() {
     setImpersonatedPerson(event.currentTarget.value)
   }
 
-  function processJoke(jokeString?: string) {
-    if (!jokeString || impersonatedPerson === "Chuck Norris") return jokeString
-
-    return jokeString.replace("Chuck Norris", impersonatedPerson)
-  }
-
   useEffect(() => {
     handleGetCategories()
     handleGetJoke()
@@ -75,7 +70,7 @@ export default function Card() {
   }, [impersonatedPerson])
 
   return (
-    <div className="flex flex-grow flex-col justify-center rounded-lg bg-white px-10 py-10 shadow-lg sm:block sm:max-w-xl sm:flex-grow-0 sm:px-16 sm:py-14 md:w-[42rem]">
+    <div className="flex w-full flex-grow flex-col justify-center rounded-lg bg-white px-10 py-10 shadow-lg sm:block sm:max-w-xl sm:flex-grow-0 sm:px-16 sm:pb-8 sm:pt-14 md:w-[42rem]">
       <Image src={imgSrc} alt={imgAlt} className={imgClassName} />
       <Joke joke={joke} />
       <Select
@@ -90,6 +85,9 @@ export default function Card() {
         onClick={(e) => handleButtonGetJoke(e)}
         className="w-full"
       />
+      <DownloadSection
+        category={selectedCategory}
+        impersonatedPerson={impersonatedPerson}
       />
     </div>
   )
