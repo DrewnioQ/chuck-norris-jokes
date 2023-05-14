@@ -112,14 +112,14 @@ export default function Select({ options, value, onChange }: SelectProps) {
       </span>
       <button
         type="button"
-        className={`rounded-md p-3 text-darkblue-500 hover:bg-neutral-300 ${activeClear}`}
+        className={`rounded-md p-3 text-darkblue-500 transition hover:bg-neutral-200 ${activeClear}`}
         onClick={(e) => handleClearSelection(e)}
       >
         <XMarkIcon className="h-4 w-4" />
       </button>
       <button
         type="button"
-        className="group rounded-md p-3 text-darkblue-500 hover:bg-neutral-200"
+        className="group rounded-md p-3 text-darkblue-500 transition hover:bg-neutral-200"
       >
         {isOpen ? (
           <ChevronUpIcon className="h-4 w-4 stroke-2" />
